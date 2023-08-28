@@ -5,7 +5,7 @@ import { Barlow } from 'next/font/google'
 
 const barlow = Barlow({ 
   subsets: ['latin'],
-  weight: ["400"], 
+  weight: ['400'], 
 })
 
 export const metadata = {
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={`relative bg-cover bg-center min-h-screen ${barlow.className}`}>
+      <body className={`flex flex-col relative bg-cover bg-center min-h-screen ${barlow.className}`}>
         <BackgroundImage />
         <Navbar />
         {children}
