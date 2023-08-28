@@ -1,3 +1,4 @@
+import BackgroundImage from './components/BackgroundImage'
 import Navbar from './components/Navbar'
 import './globals.css'
 import { Barlow } from 'next/font/google'
@@ -13,13 +14,14 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
-      <body className={`bg-cover bg-[url('/assets/home/background-home-mobile.jpg')] md:bg-[url('/assets/home/background-home-tablet.jpg')] lg:bg-[url('/assets/home/background-home-desktop.jpg')] ${barlow.className}`} 
-      >
+      <body className={`relative bg-cover bg-center min-h-screen ${barlow.className}`}>
+        <BackgroundImage />
         <Navbar />
         {children}
       </body>
     </html>
-  )
+  );
 }
