@@ -7,12 +7,12 @@ import { Barlow_Condensed } from "next/font/google"
 
 const barlowCondensedRegular = Barlow_Condensed({ 
     subsets: ['latin'],
-    weight: ["400"], 
+    weight: ['400'], 
   })
 
 const barlowCondensedBold = Barlow_Condensed({ 
     subsets: ['latin'],
-    weight: ["700"], 
+    weight: ['700'], 
   })
 
 export default function Navbar() {
