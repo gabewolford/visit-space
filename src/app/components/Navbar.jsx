@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link"
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { usePathname } from 'next/navigation';
 import { Barlow_Condensed } from "next/font/google"
 
@@ -21,12 +21,15 @@ export default function Navbar() {
     return (
         <nav className="flex flex-row justify-between md:pt-0 lg:pt-10">
             <Link href="/" className="mx-12 flex items-center">
-                <Image 
-                    src="/assets/shared/logo.svg" 
-                    alt="nav logo" 
-                    width={48} 
-                    height={48} 
-                />
+                <Image
+                    src="/assets/shared/logo.svg"
+                    alt="nav logo"
+                    width={48}
+                    height={48}
+                    style={{
+                        maxWidth: "100%",
+                        height: "auto"
+                    }} />
             </Link>
 
             <div className="flex items-center">
@@ -67,5 +70,5 @@ export default function Navbar() {
                 </div>
             </div>
         </nav>
-    )
+    );
 }

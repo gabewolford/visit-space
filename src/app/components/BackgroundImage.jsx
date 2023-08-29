@@ -1,6 +1,6 @@
 'use client'
 
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { usePathname } from 'next/navigation';
 
 export default function BackgroundImage() {
@@ -40,32 +40,38 @@ export default function BackgroundImage() {
         <div className={`absolute inset-0 -z-50 background-image`}>
             <Image
                 src={currentPageBackground.mobile}
-                layout="fill"
-                objectFit="cover"
                 priority
                 alt=""
                 className="block md:hidden w-full h-full"
-            />
+                fill
+                sizes="100vw"
+                style={{
+                    objectFit: "cover"
+                }} />
             <div className="hidden md:block">
                 <Image
                     src={currentPageBackground.tablet}
-                    layout="fill"
-                    objectFit="cover"
                     priority
                     alt=""
                     className="block w-full h-full"
-                />
+                    fill
+                    sizes="100vw"
+                    style={{
+                        objectFit: "cover"
+                    }} />
             </div>
             <div className="hidden lg:block">
                 <Image
                     src={currentPageBackground.desktop}
-                    layout="fill"
-                    objectFit="cover"
                     priority
                     alt=""
                     className="block w-full h-full"
-                />
+                    fill
+                    sizes="100vw"
+                    style={{
+                        objectFit: "cover"
+                    }} />
             </div>
         </div>
-    )
+    );
 }

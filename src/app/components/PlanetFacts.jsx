@@ -2,7 +2,7 @@
 
 import { Barlow, Barlow_Condensed, Bellefair } from "next/font/google"
 import { useEffect, useState } from "react"
-import Image from "next/legacy"
+import Image from "next/image"
 
 const barlow = Barlow({ 
   subsets: ['latin'],
@@ -99,10 +99,11 @@ const destinations = [
               src={selectedPlanet.images.png} 
               alt={selectedPlanet.name} 
               className="hidden lg:block w-fit h-fit"
-              width={570}
-              height={570}
-            >
-            </Image>
+              width={1000}
+              height={1000}
+            />
+
+
 
             <div className="flex flex-col gap-6 mt-8 lg:mt-0 mx-32 lg:mx-0 items-start lg:w-[444px]">
                 <div className={`w-[285px] flex flex-row justify-between ${barlowCondensedRegular.className} text-lightblue-500 hidden lg:flex`}>
@@ -113,9 +114,9 @@ const destinations = [
                 <Image
                   src={selectedPlanet.images.png} 
                   alt={selectedPlanet.name} 
-                  className="w-fit h-fit mx-auto block lg:hidden"
-                  width={570}
-                  height={570}
+                  className="mx-auto block lg:hidden"
+                  width={1000}
+                  height={1000}
                 >
                 </Image>
 
