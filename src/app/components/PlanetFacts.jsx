@@ -2,7 +2,7 @@
 
 import { Barlow, Barlow_Condensed, Bellefair } from "next/font/google"
 import { useEffect, useState } from "react"
-import Image from "next/image"
+import Image from "next/legacy"
 
 const barlow = Barlow({ 
   subsets: ['latin'],
