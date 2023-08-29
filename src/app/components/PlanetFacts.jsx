@@ -93,30 +93,36 @@ const destinations = [
     }
 
     return (
-        <section className="flex flex-col-reverse lg:flex-row gap-12">
-            <img src={selectedPlanet.images.png} alt={selectedPlanet.name} className="hidden lg:block"/>
+        <section className="flex flex-col-reverse lg:flex-row gap-12 justify-between w-full items-center">
 
-            <div className="flex flex-col gap-6">
-                <div className={`w-[285px] flex flex-row justify-between ${barlowCondensedRegular.className} text-lightblue-500`}>
+            <img src={selectedPlanet.images.png} alt={selectedPlanet.name} className="hidden lg:block w-fit h-fit" />
+
+            <div className="flex flex-col gap-6 mt-8 lg:mt-0 mx-32 lg:mx-0 items-start lg:w-[444px]">
+                <div className={`w-[285px] flex flex-row justify-between ${barlowCondensedRegular.className} text-lightblue-500 hidden lg:flex`}>
                     {planetNames}
                 </div>
-                <h1 className={`${bellefair.className} text-[100px] uppercase`}>{currentPlanet}</h1>
-                <img src={selectedPlanet.images.png} alt={selectedPlanet.name} className="block lg:hidden"/>
-                <p className={`${barlow.className} text-lightblue-500 text-lg mb-4`}>{selectedPlanet.description}</p>
+                <h1 className={`${bellefair.className} text-[100px] uppercase hidden lg:flex`}>{currentPlanet}</h1>
+                <img src={selectedPlanet.images.png} alt={selectedPlanet.name} className="w-fit h-fit mx-auto block lg:hidden"/>
+                <div className={`w-[285px] flex flex-row justify-between ${barlowCondensedRegular.className} text-lightblue-500 lg:hidden mt-12 lg:mt-0 mx-auto lg:mx-0`}>
+                    {planetNames}
+                </div>
+                <h1 className={`${bellefair.className} text-[100px] uppercase flex lg:hidden mx-auto lg:mx-0`}>{currentPlanet}</h1>
+                <p className={`${barlow.className} text-lightblue-500 text-lg mb-4 text-center lg:text-left`}>{selectedPlanet.description}</p>
 
                 <div className="w-full h-[1px] bg-[#383B4B]"></div>
 
-                <div className="flex flex-row">
-                    <div className="flex flex-col gap-3 mr-14">
+                <div className="flex flex-row mx-auto lg:mx-0">
+                    <div className="flex flex-col gap-3 mr-14 text-center lg:text-left">
                         <h6 className={`${barlowCondensedRegular.className} text-sm text-lightblue-500 uppercase tracking-[2.362px]`}>Avg. Distance</h6>
                         <p className={`${bellefair.className} uppercase text-[28px]`}>{selectedPlanet.distance}</p>
                     </div>
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-3 text-center lg:text-left">
                         <h6 className={`${barlowCondensedRegular.className} text-sm text-lightblue-500 uppercase tracking-[2.362px]`}>Est. Travel Time</h6>
                         <p className={`${bellefair.className} uppercase text-[28px]`}>{selectedPlanet.travel}</p>
                     </div>
                 </div>
             </div>
+          
         </section>
     );
 }

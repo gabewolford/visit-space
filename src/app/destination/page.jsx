@@ -19,10 +19,8 @@ export default function DestinationPage() {
           <h4 className={`${barlowCondensed.className} tracking-[4.725px] uppercase`}>Pick your destination</h4>
         </div>
 
-        <div className="flex flex-col my-16 justify-around">
-          <div className="flex flex-col lg:flex-row ">
-            <PlanetFacts />
-          </div>
+        <div className="flex flex-col lg:flex-row my-16 justify-between">
+          <PlanetFacts />
         </div>
       </main>
     ) 
