@@ -2,7 +2,7 @@
 
 import { Barlow, Barlow_Condensed, Bellefair } from "next/font/google"
 import { useEffect, useState } from "react"
-
+import Image from "next/image"
 
 const barlow = Barlow({ 
   subsets: ['latin'],
@@ -23,8 +23,8 @@ const destinations = [
     {
       "name": "Moon",
       "images": {
-        "png": "./assets/destination/image-moon.png",
-        "webp": "./assets/destination/image-moon.webp"
+        "png": "/assets/destination/image-moon.png",
+        "webp": "/assets/destination/image-moon.webp"
       },
       "description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
       "distance": "384,400 km",
@@ -33,8 +33,8 @@ const destinations = [
     {
       "name": "Mars",
       "images": {
-        "png": "./assets/destination/image-mars.png",
-        "webp": "./assets/destination/image-mars.webp"
+        "png": "/assets/destination/image-mars.png",
+        "webp": "/assets/destination/image-mars.webp"
       },
       "description": "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
       "distance": "225 mil. km",
@@ -43,8 +43,8 @@ const destinations = [
     {
       "name": "Europa",
       "images": {
-        "png": "./assets/destination/image-europa.png",
-        "webp": "./assets/destination/image-europa.webp"
+        "png": "/assets/destination/image-europa.png",
+        "webp": "/assets/destination/image-europa.webp"
       },
       "description": "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
       "distance": "628 mil. km",
@@ -53,8 +53,8 @@ const destinations = [
     {
       "name": "Titan",
       "images": {
-        "png": "./assets/destination/image-titan.png",
-        "webp": "./assets/destination/image-titan.webp"
+        "png": "/assets/destination/image-titan.png",
+        "webp": "/assets/destination/image-titan.webp"
       },
       "description": "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
       "distance": "1.6 bil. km",
@@ -95,14 +95,30 @@ const destinations = [
     return (
         <section className="flex flex-col-reverse lg:flex-row gap-12 justify-between w-full items-center">
 
-            <img src={selectedPlanet.images.png} alt={selectedPlanet.name} className="hidden lg:block w-fit h-fit" />
+            <Image
+              src={selectedPlanet.images.png} 
+              alt={selectedPlanet.name} 
+              className="hidden lg:block w-fit h-fit"
+              width={570}
+              height={570}
+            >
+            </Image>
 
             <div className="flex flex-col gap-6 mt-8 lg:mt-0 mx-32 lg:mx-0 items-start lg:w-[444px]">
                 <div className={`w-[285px] flex flex-row justify-between ${barlowCondensedRegular.className} text-lightblue-500 hidden lg:flex`}>
                     {planetNames}
                 </div>
                 <h1 className={`${bellefair.className} text-[100px] uppercase hidden lg:flex`}>{currentPlanet}</h1>
-                <img src={selectedPlanet.images.png} alt={selectedPlanet.name} className="w-fit h-fit mx-auto block lg:hidden"/>
+
+                <Image
+                  src={selectedPlanet.images.png} 
+                  alt={selectedPlanet.name} 
+                  className="w-fit h-fit mx-auto block lg:hidden"
+                  width={570}
+                  height={570}
+                >
+                </Image>
+
                 <div className={`w-[285px] flex flex-row justify-between ${barlowCondensedRegular.className} text-lightblue-500 lg:hidden mt-12 lg:mt-0 mx-auto lg:mx-0`}>
                     {planetNames}
                 </div>
