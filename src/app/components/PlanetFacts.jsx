@@ -99,8 +99,8 @@ const destinations = [
               src={selectedPlanet.images.png} 
               alt={selectedPlanet.name} 
               className="hidden lg:block w-fit h-fit"
-              width={1000}
-              height={1000}
+              width={570}
+              height={570}
             />
 
 
@@ -115,8 +115,8 @@ const destinations = [
                   src={selectedPlanet.images.png} 
                   alt={selectedPlanet.name} 
                   className="mx-auto block lg:hidden"
-                  width={1000}
-                  height={1000}
+                  width={570}
+                  height={570}
                 >
                 </Image>
 
